@@ -8,7 +8,7 @@ function App() {
   const [output, setOutput] = useState('');
 
   const importModel = async () => {
-    const newModel = await tf.loadLayersModel('http://localhost:5173/model.json');
+    const newModel = await tf.loadLayersModel('https://abhijeet-lodhiyal.github.io/BrainTumorDetection/model.json');
     setModel(newModel)
     console.log('Model loaded successfully');
   };
