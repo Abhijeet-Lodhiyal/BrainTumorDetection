@@ -35,11 +35,10 @@ function App() {
     const inputWithBatch = imag.expandDims(0);             // to give batch size to tensor
     const result = await model.predict(inputWithBatch);
     const ans = result.arraySync()[0][0]
-    console.log(result.arraySync()[0][0]);
     if (ans >= 0.5)
-      setOutput("The model predicted that the given image has Tumor with a probablity of " + ans)
+      setOutput("The model predicted that the given image has Tumor with a probablity of " + ans.toPrecision(3))
     else
-      setOutput("The model predicted that the given image does not have Tumor with a probablity of " + ans )
+      setOutput("The model predicted that the given image does not have Tumor with a probablity of " + ans.toExponential(3) )
   };
   
 
